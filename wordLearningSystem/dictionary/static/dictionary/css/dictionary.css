@@ -1,0 +1,203 @@
+body{
+    background:  #4a8dff;
+}
+
+.navbar-section {
+    background-color: #4a8dff;
+}
+
+.dict_block {
+    background-color: #4a8dff;
+    background-image: url("../image/wave.svg");
+    background-size: cover;
+    border: 20px;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dict_search{
+    transform: translate(0, -40px);
+}
+
+.dict_search h2{
+    color: white;
+}
+
+.dict_search .flex{
+    display: flex;
+    position: relative;
+}
+
+.dict_search .flex .form-control{
+    width: 570px;
+    /*margin-right: 20px;*/
+    padding: 10px 15px;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+
+.dict_search a{
+    text-decoration: none;
+    color: white;
+}
+
+.dict_search .btn {
+    position: absolute;
+    right: 5px;
+    top: 2.5px;
+    bottom: 2.5px;
+    height: 90%;
+    border-radius: 100%;
+}
+
+
+.searched_block {
+    background-color: #3434ff;
+    max-height: 300px;
+    justify-items: center;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    /*padding-bottom: 5px;*/
+}
+
+.searched_block a {
+    /*margin-top: 5px;*/
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 22px;
+    display: inline-block;
+    margin: 5px 0;
+    margin-left: 25%;
+}
+
+.dict_block .random-btn {
+    color: #f2f2f2;
+    font-size: 16px;
+    display: inline-block;
+    margin: 5px 0;
+    border: none;
+    background-color: transparent;
+}
+
+.searched-list {
+
+    width: 500px;
+    margin: auto;
+    overflow: auto;
+}
+
+.searched-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.searched-list::-webkit-scrollbar {
+    display: none;
+}
+
+.searched-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: none !important;
+    background-color: transparent;
+}
+.searched-list::-webkit-scrollbar {
+    width: 3px !important;
+    background-color: transparent;
+}
+.searched-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.searched-list a {
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #051349;
+    margin-left: 5px;
+}
+
+
+
+/* Word Container ---------------------------------------*/
+.word-block {
+    background-color: #f2f2f2;
+    padding: 20px;
+    min-height: 450px;
+}
+
+
+.word-container {
+    background: #f2f2f2;
+    height: 350px;
+}
+
+
+
+.word-container {
+    width: 50%;
+    margin: auto;
+    border: 1px solid black;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*text-align: justify;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*text-align: center;*/
+}
+
+.word-container h3{
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 50%;
+    font-size: 36px;
+    color: #2a2a72;
+}
+
+.word-container h6{
+    margin: auto;
+    /*height: 25%;*/
+    width: 75%;
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.word-container p{
+    margin: auto;
+    border: 1px solid black;
+    height: 35%;
+    width: 75%;
+    margin-top: 15px;
+}
+
+.word-container a {
+    /*margin-left: 12.5%;*/
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.alert-warning {
+    text-align: center;
+}
+
+/* ------------------------------------------------------*/
+
+.add-to-list_btn {
+    display: inline-block;
+    padding: 5px;
+    /*margin-top: 20px;*/
+    /*margin-left: 90px;*/
+    border-radius: 5px;
+}
+
+.alert-warning {
+    margin-top: 20px;
+    text-align: center;
+}

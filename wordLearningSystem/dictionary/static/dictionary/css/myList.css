@@ -1,0 +1,129 @@
+.dict_space {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: 400px;
+    height: 700px;
+    /*overflow: auto;*/
+}
+
+.dictionary {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 0 0 5px 5px;
+    height: 500px;
+    overflow: auto;
+}
+
+
+
+.alert-info h1, .dict_space h1 {
+    /*text-align: center;*/
+    border-bottom: 1px solid black;
+    width: 800px;
+    margin: auto;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.dict-up {
+    border-bottom: 1px solid black;
+    width: 800px;
+    margin: auto;
+    background-color: #f2f2f2;
+    font-size: 28px;
+    padding-left: 20px;
+}
+
+.dict-up span {
+    display: inline-block;
+    width: 200px;
+    margin-right: 17px;
+}
+
+.word-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.word-list li {
+    margin-bottom: 10px;
+}
+
+.word, .definition {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+
+.delete_word_btn {
+    position: relative;
+    float: right;
+    border: 0;
+    background: #ff8484;
+    border-radius: 50%;
+    color: #f2f2f2;
+    height: 30px;
+    width: 30px;
+    margin-left: 0;
+}
+
+.word-list span {
+    display: inline-block;
+    width: 200px;
+    margin-right: 20px;
+}
+
+
+.dictionary::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f2f2f2;
+}
+
+.dictionary::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+}
+
+.dictionary::-webkit-scrollbar-thumb {
+    background-color: #b4b4b4;
+    border-radius: 5px;
+}
+
+.dictionary::-webkit-scrollbar-thumb:hover {
+    background-color: #9a9999;
+}
+
+
+.non-register-window {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    height: 250px;
+    width: 600px;
+    background-color: #f2f2f2;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.non-register-window h4 {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    color: #2a2a72;
+}
+
+.non-register-window p {
+    font-size: 18px;
+}
+
+.non-register-window a{
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    color: #f2f2f2;
+}

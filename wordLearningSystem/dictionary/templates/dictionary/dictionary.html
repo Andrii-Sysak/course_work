@@ -1,0 +1,54 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Dictionary
+{% endblock %}
+
+{% block body %}
+    <div class="dict_block">
+        <div class="dict_search">
+            <h2>Знайдіть слово, яке бажаєте вивчити</h2>
+            <form class="form-inline" method="post">
+                <div class="flex">
+                    {% csrf_token %}
+                    <input class="form-control" type="text" placeholder="Напишіть слово яке хочете знайти" aria-label="Search" name="searched">
+                    <button class="btn btn-outline-success" type="submit" name="buttonSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <button class="random-btn" type="submit" name="buttonRandom"><i class="fa-solid fa-shuffle"></i> Випадкове Слово</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="searched_block">
+        <div class="searched-list">
+            {% for word in words %}
+                <a href="{% url 'dictionary:index' word.word %}"><b>{{ word.word }}</b> - {{ word.translation }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="word-block">
+        {% if word %}
+            <div class="word-container">
+                <h3>{{ word.word }}</h3>
+                <h6><u>Значення англійською</u>: {{ meaning }}</h6>
+                <h6><u>Переклад</u>: {{ word.translation }}</h6>
+
+                {% if user.is_authenticated %}
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="add-to-list_btn" name="buttonAddToList"><i class="fa-solid fa-list"></i> Add to list</button>
+                    </form>
+                    <br>
+                {% endif %}
+
+                {% if message %}
+                    <span class="alert alert-info">{{ message }}</span>
+                {% endif %}
+            </div>
+        {% else %}
+            <h1 class="alert alert-warning">Поки не обрано жодного слова</h1>
+        {% endif %}
+
+    </div>
+{% endblock %}

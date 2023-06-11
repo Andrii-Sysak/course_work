@@ -1,0 +1,146 @@
+.flip-card-container {
+  min-height: 650px;
+}
+
+.flip-card {
+  position: relative;
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  /*box-shadow: #2a2a72;*/
+}
+
+.flip-card, .flip-card-inner, .flip-card-front, .flip-card-back{
+  border-radius: 20px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-inner.flip {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #2980b9;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+    .mini-button {
+      position: absolute;
+      padding: 10px;
+      top: 5px;
+      right: 5px;
+      background-color: transparent;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .mini-button::before {
+      /*content: "\f01e"; !* Код символу Font Awesome для вибраної іконки *!*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Font Awesome", serif;
+      font-size: 16px;
+      color: #f2f2f2;
+    }
+
+
+.flip-card h1 {
+  position: absolute; /* Зробіть заголовок абсолютно позиціонованим */
+  top: 50%; /* Перемістіть його вгору на 50% */
+  left: 50%; /* Перемістіть його вправо на 50% */
+  transform: translate(-50%, -50%); /* Застосуйте переклад, щоб вирівняти його по центру */
+  text-align: center; /* Центруйте текст в заголовку */
+  margin: 0; /* Збережіть нульовий відступ */
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.flip-card .answer_input {
+  position: absolute; /* Зробіть заголовок абсолютно позиціонованим */
+  top: 50%; /* Перемістіть його вгору на 50% */
+  left: 50%; /* Перемістіть його вправо на 50% */
+  transform: translate(-50%, -50%); /* Застосуйте переклад, щоб вирівняти його по центру */
+  text-align: center; /* Центруйте текст в заголовку */
+  margin: 0; /* Збережіть нульовий відступ */
+  max-width: 80%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  color: #f2f2f2;
+  font-size: 24px;
+}
+
+.flip-card .answer_input:focus {
+  outline: none;
+}
+
+.flip-card .answer_btn {
+  position: absolute; /* Зробіть заголовок абсолютно позиціонованим */
+  bottom: 5%; /* Перемістіть його вгору на 50% */
+  left: 50%; /* Перемістіть його вправо на 50% */
+  transform: translate(-50%, -50%); /* Застосуйте переклад, щоб вирівняти його по центру */
+  text-align: center; /* Центруйте текст в заголовку */
+  margin: 0; /* Збережіть нульовий відступ */
+  background-color: #009ffd;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  color: #f2f2f2;
+}
+
+.answer_block {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.alert {
+  justify-self: center;
+  margin-top: 30px;
+  margin-left: 125px;
+}
+
+.next-btn {
+  background-color: #009ffd;
+  border: 0;
+  outline: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  color: #f2f2f2;
+  margin-top: 30px;
+  justify-self: end;
+  margin-right: 20px;
+}
+

@@ -1,0 +1,64 @@
+{% extends 'authorization/layout.html' %}
+
+
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block body %}
+{#    <form method="post" class="form-group">#}
+{#        {% csrf_token %}#}
+{##}
+{#        <div class="authorization_box">#}
+{#            <h3>Registration</h3>#}
+{##}
+{#            <label class="input-container">#}
+{#                <input type="text" placeholder="Name" class="input-field" name="username">#}
+{#                <input type="email" placeholder="Email" class="input-field" name="email">#}
+{#                <input type="password" placeholder="Password" class="input-field" name="password">#}
+{#                <input type="password" placeholder="Confirm Password" class="input-field" name="confirm_password">#}
+{#            </label>#}
+{##}
+{#            <button class="login_btn" type="submit">Create account</button>#}
+{##}
+{#            {% if error %}#}
+{#                <div class="alert alert-warning" role="alert">{{ error }}</div>#}
+{#            {% endif %}#}
+{##}
+{#            <h6>Already have an account?</h6>#}
+{#            <a href="{% url 'authorization:login' %}" class="sign_up_a">You can just log in</a>#}
+{#        </div>#}
+{#    </form>#}
+
+    <form method="post" action="" class="form-group">
+{#        {% csrf_token %}#}
+
+        <div class="authorization_box">
+            <h3>Registration</h3>
+
+            <label class="input-container">
+                {% csrf_token %}
+{#                {{ form.as_p }}#}
+                <input type="text" placeholder="Name" class="input-field" name="username">
+{#                <input type="email" placeholder="Email" class="input-field" name="email">#}
+                <input type="password" placeholder="Password" class="input-field" name="password1">
+                <input type="password" placeholder="Confirm Password" class="input-field" name="password2">
+
+
+{#                {{ form.username }}#}
+{#                {{ form.password1 }}#}
+{#                {{ form.password2 }}#}
+{#                {{ form. }}#}
+            </label>
+
+            <button class="login_btn" type="submit">Create account</button>
+
+            {% if error %}
+                <div class="alert alert-warning" role="alert">{{ error }}</div>
+            {% endif %}
+
+            <h6>Already have an account?</h6>
+            <a href="{% url 'authorization:login' %}" class="sign_up_a">You can just log in</a>
+        </div>
+    </form>
+{% endblock %}

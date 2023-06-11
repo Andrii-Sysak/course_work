@@ -1,0 +1,53 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+    My List
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'dictionary/css/myList.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    {% if user.is_authenticated %}
+    <div class="dict_space">
+        <h1>Словник</h1>
+
+        <div class="dict-up">
+            <span>Слово</span>
+            <span>Переклад</span>
+        </div>
+
+        <div class="dictionary">
+            {% if message %}
+                <h1>Ваш словник пустий</h1>
+            {% else %}
+
+
+                <ul class="word-list">
+                    {% for dict in words %}
+                        <li>
+                            <span class="word">{{ dict.word.word }}</span>
+                            <span class="definition">{{ dict.word.translation }}</span>
+{#                            <form action="" method="post">#}
+{#                                {% csrf_token %}#}
+                                <button class="delete_word_btn" name="buttonDelete"><i class="fa-solid fa-x"></i></button>
+{#                            </form>#}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+
+        </div>
+    </div>
+    {% else %}
+        <div class="non-register-window">
+            <h4>Ця функція доступна лише зареєстрованим користувачам</h4>
+            <p>Щоб отримати доступ до власного словника, просимо вас авторизуватися</p>
+            <a href="{% url 'authorization:login' %}" class="btn btn-info">Авторизуватися</a>
+        </div>
+    {% endif %}
+{% endblock %}

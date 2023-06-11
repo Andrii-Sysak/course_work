@@ -1,0 +1,59 @@
+{% extends 'authorization/layout.html' %}
+
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+{#    <form method="post" class="form-group">#}
+{#        <div class="authorization_box">#}
+{#            ===============================================================================================#}
+{#            {% csrf_token %}#}
+{##}
+{#            <h3>Log in to Vocab</h3>#}
+{##}
+{#            <label class="input-container">#}
+{#                <input type="text" placeholder="name" class="input-field">#}
+{#                <input type="password" placeholder="password" class="input-field">#}
+{#                <a href="#" class="forgot_a">Forgot your password?</a>#}
+{#                <label class="remember-container">#}
+{#                    <input type="checkbox" class="input_checkbox" id="remember">#}
+{#                    <label for="remember" class="checkbox-label">Remember me on this computer</label>#}
+{#                </label>#}
+{#            </label>#}
+{##}
+{#            <button class="login_btn" type="submit">Log in</button>#}
+{##}
+{##}
+{#            <h6>Don't have an account yet?</h6>#}
+{#            <a href="{% url 'authorization:register' %}" class="sign_up_a">Just register in few seconds!</a>#}
+{#        </div>#}
+{#    </form>#}
+
+    <form method="post" class="form-group">
+        <div class="authorization_box">
+            {% csrf_token %}
+            <h3>Log in to Vocab</h3>
+
+            <label class="input-container">
+                <input type="text" placeholder="name" class="input-field" name="username">
+                <input type="password" placeholder="password" class="input-field" name="password">
+                <a href="#" class="forgot_a">Forgot your password?</a>
+                <label class="remember-container">
+                    <input type="checkbox" class="input_checkbox" id="remember">
+                    <label for="remember" class="checkbox-label">Remember me on this computer</label>
+                </label>
+            </label>
+
+            <button class="login_btn" type="submit">Log in</button>
+
+            {% if error %}
+                <div class="alert alert-warning" role="alert">{{ error }}</div>
+            {% endif %}
+
+            <h6>Don't have an account yet?</h6>
+            <a href="{% url 'authorization:register' %}" class="sign_up_a">Just register in few seconds!</a>
+        </div>
+    </form>
+{% endblock %}

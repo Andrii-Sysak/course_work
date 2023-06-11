@@ -1,0 +1,70 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+    practising
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'quiz/css/swapCardTest.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block body %}
+    <div class="flip-card-container">
+
+        <div class="answer_block">
+            {% if result %}
+                {% if result == 'Хибна' %}
+                    <span class="alert alert-danger">Ваша відповідь - {{ result }}<br> Правильна відповідь: {{ word.translation }}</span>
+                {% elif result == 'Правильна' %}
+                    <span class="alert alert-success">Ваша відповідь - {{ result }}</span>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="next-btn" name="nextButton">Next word</button>
+                </form>
+            {% endif %}
+        </div>
+
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <button class="mini-button" type="button"><i class="fas fa-rotate fa-lg"></i></button>
+                    {#                <button class="mini-button"></button>#}
+                    <h1>{{ word.word }}</h1>
+
+                </div>
+                <div class="flip-card-back">
+                    <button class="mini-button" type="button"><i class="fas fa-rotate fa-lg"></i></button>
+                    {#                <button class="mini-button"></button>#}
+
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <label>
+                            <input type="text" class="answer_input" name="answer">
+                        </label>
+                        <button type="submit" class="answer_btn" name="answerButton">submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var flipCardInner = document.querySelector('.flip-card-inner');
+
+            flipCardInner.addEventListener('click', function(event) {
+                if (event.target.classList.contains('fa-rotate') || event.target.classList.contains('mini-button')) {
+                    flipCardInner.classList.toggle('flip');
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+{% endblock %}

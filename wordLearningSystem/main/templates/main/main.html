@@ -1,0 +1,61 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Main page
+{% endblock %}
+
+{% block styles %}
+    {{ super }}
+{% endblock %}
+
+
+{% block body %}
+
+{#    <div class="search_block">#}
+{#        <div class="search_section">#}
+{#            <h2>Знайдіть слово, яке бажаєте вивчити</h2>#}
+{#            <form class="form-inline" method="post">#}
+{#                <div class="flex">#}
+                    {#                {% csrf_token %}#}
+{#                    <input class="form-control" type="search" placeholder="Напишіть слово яке хочете знайти" aria-label="Search" name="searched">#}
+{#                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>#}
+{#                </div>#}
+{#            </form>#}
+{#            <a href="#"><i class="fa-solid fa-shuffle"></i> Випадкове Слово</a>#}
+{#        </div>#}
+{#    </div>#}
+
+    <div class="main_block">
+        <div class="info_block">
+            <h2>Vocab</h2>
+            <h5>Вітаємо вас на сайті вивчення англійських слів</h5>
+{#            <button class="lets-go_btn" id="lets-go_btn" href="#options">LETS GO!</button>#}
+            <a href="##options">LETS GO!</a>
+            <img src="../../static/main/image/img.png" alt="Photo">
+        </div>
+
+
+    </div>
+
+    <div class="options" id="#options">
+        <div class="option-dictionary">
+            <h2>Словник</h2>
+            <p>
+                Незалежно від того, шукаєте ви конкретне слово чи просто переглядаєте,
+                ви знайдете всесвіт дружніх пояснень і веселих заходів, призначених для навчання та розваги.
+            </p>
+            <a href="{% url 'dictionary:index' word=None %}" class="btn btn-success">Дізнатись більше <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="option-test">
+            <h2>Практикування слів</h2>
+            <p>
+                Грайте в ігри та змагайтеся самостійно.
+                З нашим розширеним алгоритмом навчання та навчальними інструментами приготуйтеся
+                до розширення свого словникового запасу!
+            </p>
+            <a href="{% url 'quiz:index' %}" class="btn btn-danger">Перейти до вправ <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+{% endblock %}
+
